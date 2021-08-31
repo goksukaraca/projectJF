@@ -6,7 +6,7 @@ const PopupButton = () => {
     const [isOpen, setIsOpen] = useState(false);
  
     const togglePopup = () => {
-      setIsOpen(!isOpen);
+      setIsOpen(!isOpen);  
     }
    
     return (

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Popup from "./Popup";
+import SavedChecklist from "./SavedCheklist";
 import SelectFrom from "./SelectForm";
 
 const PopupButton = () => {
@@ -18,6 +19,7 @@ const PopupButton = () => {
         />
         {isOpen && <Popup
             content={<SelectFrom />}
+            handleSave={<SavedChecklist />}
             handleClose={togglePopup}
         />}
     </div>);

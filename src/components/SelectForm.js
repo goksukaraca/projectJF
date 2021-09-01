@@ -32,17 +32,11 @@ const SelectFrom = () => {
         setSelectedList(selectedList);
         console.log(selectedList);
     }
-    
-    const handleSave = event => {
-        event.preventDefault();
-        
-    }
 
     return(
         <div>
             <Select isMulti="true" name="list-box" onChange={handleChange} 
                 options={option}/>
-        <button className="save-btn" onClick={handleSave}>Save</button>
         </div>
             
     );

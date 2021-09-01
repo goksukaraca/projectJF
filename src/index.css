@@ -42,7 +42,7 @@ code {
   content: 'x';
   cursor: pointer;
   position: fixed;
-  right: calc(27% - 20px);
+  right: calc(28% - 20px);
   top: calc(100vh - 85vh - 33px);
   background: #ededed;
   width: 25px;
@@ -58,11 +58,14 @@ code {
   cursor: pointer;
   position: absolute;
   width: 55px;
-  height: 30px;
+  height: 25px;
   border: 1px solid #999;
   border-radius: 20%;
   line-height: 20px;
   background: #ededed;
-  right: 80%;
+  right: 85%;
   bottom: 15%;
+  text-align: center;
+  font-size: 15px;
+  content: 'Save';
 }

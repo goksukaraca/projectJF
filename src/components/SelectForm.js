@@ -13,7 +13,6 @@ const SelectFrom = () => {
         fetch(`https://api.jotform.com/user/forms?apikey=${apiKey}&orderby=id`)
         .then(response => response.json()).then(veri => {
         setData(veri.content);
-        console.log(veri.content)
         });
     }, []); 
     
@@ -24,23 +23,26 @@ const SelectFrom = () => {
     })
 
     const handleChange = e => {
-        console.log(data);
-        console.log(e);
-
-        let options = data;
-        //options.fill(data);
-        console.log(options);
+        console.log(e); //tıklandığında gelen bilgiler.
+        const options = data;
+        console.log(options); //all form info.
         //options = Array.apply(null, options)
-        const selectedValues = options.filter(x => x.selected).map(x => x.value);
-        setSelectedList(selectedValues);
-        console.log(selectedValues);
+        //const selectedValues = options.filter(x => x.selected).map(x => x.value);
+        let selectedList = e;
+        setSelectedList(selectedList);
+        console.log(selectedList);
+    }
+    
+    const handleSave = event => {
+        event.preventDefault();
+        
     }
 
     return(
         <div>
             <Select isMulti="true" name="list-box" onChange={handleChange} 
-                options={option}
-            />
+                options={option}/>
+        <button className="save-btn" onClick={handleSave}>Save</button>
         </div>
             
     );

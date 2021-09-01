@@ -28,12 +28,16 @@ const SelectFrom = () => {
         setSelectedList(e);
     }
     
-    const handleSave = (e) => {
-        e.preventDefault();
+    const handleSave = (event) => {
+        event.preventDefault();
         const lastSelected = JSON.parse(localStorage.getItem('name'));
         setSelectedList(lastSelected);
         console.log(selectedList); 
-        setName('');
+        console.log(name);
+        //setName('');
+        //var keyName = window.localStorage.key(index);
+        console.log(JSON.stringify(localStorage.key('name')));
+        
     }
         return(
         <div>

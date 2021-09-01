@@ -69,3 +69,8 @@ code {
   font-size: 15px;
   content: 'Save';
 }
+
+.input-box {
+  width: fit-content;
+  height: 30px;
+}

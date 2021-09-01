@@ -6,7 +6,7 @@ const SavedChecklist = ({selectedList}) => {
     console.log("burası savedCheckList");
     
     return(
-        <li onClick={<ShowList selectedList={selectedList}/>}>
+        <li onClick={() => <ShowList selectedList={selectedList}/>}>
             Checklist - 1
         </li>
     );

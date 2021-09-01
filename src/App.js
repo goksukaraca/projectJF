@@ -6,7 +6,9 @@ function App() {
     <div className="App">
       <header className="App-header"> Checklist App
       </header>
-      <PopupButton />
+      <form>
+        <PopupButton />
+      </form>
     </div>
   );
 }

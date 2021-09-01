@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import Select from "react-select";
 
 const apiKey = `3d3e67d7703a9d49cccfc8e5686daa94`;
+const SELECT_VALUE_KEY = "MySelectValue";
 
 const SelectFrom = () => {
     const [data, setData] = useState([]);    
@@ -23,19 +24,14 @@ const SelectFrom = () => {
     })
 
     const handleChange = e => {
-        console.log(e); //tıklandığında gelen bilgiler.
-        const options = data;
-        console.log(options); //all form info.
-        //options = Array.apply(null, options)
-        //const selectedValues = options.filter(x => x.selected).map(x => x.value);
-        let selectedList = e;
-        setSelectedList(selectedList);
-        console.log(selectedList);
+        console.log(e); 
+        localStorage.setItem(SELECT_VALUE_KEY, JSON.stringify(e));
+        setSelectedList(e);
     }
 
     return(
         <div>
-            <Select isMulti="true" name="list-box" onChange={handleChange} 
+            <Select isMulti="true" name="list-box" value={selectedList} onChange={handleChange} 
                 options={option}/>
         </div>
             

@@ -1,6 +1,5 @@
 import './index.css';
 import PopupButton from "./components/PopupButton";
-import SelectFrom from './components/SelectForm';
 
 function App() {
   return (
@@ -10,7 +9,8 @@ function App() {
       <p></p>
         <PopupButton />
       <form>
-        <SelectFrom />
+        <ul>
+        </ul>
       </form>
     </div>
   );

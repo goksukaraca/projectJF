@@ -74,3 +74,7 @@ code {
   width: fit-content;
   height: 30px;
 }
+
+.divcls {
+  background-color: aqua;
+}

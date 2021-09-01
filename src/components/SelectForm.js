@@ -35,8 +35,12 @@ const SelectFrom = () => {
         //console.log(lastSelected);
         setSelectedList(lastSelected);
         console.log(selectedList);
-
     }
+
+    useEffect( () => {
+        console.log(name);
+        
+    } , [handleSave]);
 
     return(
         <div>

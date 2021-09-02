@@ -32,6 +32,10 @@ code {
   padding: 329.5px 570px;
   text-align:justify;
 }
+.rigth-list{
+  display: flex;
+  background-color: violet;
+}
 .app-header{
   text-align: left;
   justify-content: left;

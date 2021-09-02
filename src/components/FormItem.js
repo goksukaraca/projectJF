@@ -1,8 +1,10 @@
 import React from "react";
 
 const FormItem = ( {value, label} ) => {
-
-    return(<li key = {value}><a href={`https://form.jotform.com/${value}`} target="_blank" >{label}</a></li>)
+    console.log("formItem");
     
+    return(
+        <li key={value}><a href={`https://form.jotform.com/${value}`}></a>{label}</li>
+    );
 }
 export default FormItem;

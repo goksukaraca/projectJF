@@ -11,6 +11,7 @@ function App() {
         <PopupButton />
       </div>
       <div className="right-side">
+
       </div>
     </div>
   );

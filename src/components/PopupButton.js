@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import Change from "./Change";
+import FormItem from "./FormItem";
 import Popup from "./Popup";
 import SelectFrom from "./SelectForm";
 
 const PopupButton = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const data = useState(localStorage.getItem("checklist", JSON.stringify("checklist")));
+    //const data = useState(localStorage.getItem("checklist", JSON.stringify("checklist")));
+    const data = JSON.parse(localStorage.getItem("checklist"));
     const [checkname, setCheckName] = useState("");
 
     const togglePopup = () => {
@@ -30,9 +31,16 @@ const PopupButton = () => {
         />}
         {
         <form>
-            <ul className="formleft" onClick={() =>{ 
-                console.log(JSON.parse(JSON.stringify(data))); 
-                <Change data={JSON.stringify(data)}/>}}>{checkname}
+            <ul className="formleft" onClick={() => {
+                console.log(data);
+                data.map(item => {
+                    console.log(item);
+                    return(
+                        <FormItem {...item} value={item.value} label={item.label} />
+                    );
+                })
+            }}>
+                {checkname}
             </ul>
         </form>
         } 

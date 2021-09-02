@@ -10,10 +10,11 @@ const PopupButton = () => {
     }
    
     return (
-    <div>
+    <div >
         <input
+        className="popup-btn"
             type="button"
-            value="Click to Open Popup"
+            value="Create Checklist"
             onClick={togglePopup}
         />
         {isOpen && <Popup

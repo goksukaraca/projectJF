@@ -7,7 +7,7 @@ const SelectFrom = () => {
 
     const [data, setData] = useState([]);    
     const [selectedList, setSelectedList] = useState([]);
-    const [name, setName] = useState(JSON.parse(localStorage.getItem('selectedList')));
+    const [name, setName] = useState('');
     
     useEffect(() => {
         fetch(`https://api.jotform.com/user/forms?apikey=${apiKey}&orderby=id`)
@@ -24,19 +24,17 @@ const SelectFrom = () => {
 
     const handleChange = e => {
         console.log(e); 
-        localStorage.setItem(name, JSON.stringify(e));
+        localStorage.setItem(`${name}`, JSON.stringify(e));
         setSelectedList(e);
     }
     
     const handleSave = (event) => {
         event.preventDefault();
-        const lastSelected = JSON.parse(localStorage.getItem('name'));
-        setSelectedList(lastSelected);
         console.log(selectedList); 
-        console.log(name);
-        //setName('');
-        //var keyName = window.localStorage.key(index);
-        console.log(JSON.stringify(localStorage.key('name')));
+        console.log(JSON.stringify(localStorage.key(`${name}`)));
+        let item = localStorage.getItem(`${name}`) !== null ? JSON.parse(localStorage.getItem(`${name}`)) : [];//nasıl localden value çekilir.
+        console.log(item);
+        item.map(element => console.log(element.label));
         
     }
         return(

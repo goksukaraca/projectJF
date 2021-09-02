@@ -3,15 +3,16 @@ import PopupButton from "./components/PopupButton";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header"> Checklist App
-      </header>
-      <p></p>
+    <div className="flex-container">
+      <div className="left-side">
+        <header className="app-header"> Checklist App
+          <p></p>
+        </header>
         <PopupButton />
-      <form>
-        <ul>
-        </ul>
-      </form>
+      </div>
+      <div className="right-side">
+        Your Checklist
+      </div>
     </div>
   );
 }

@@ -6,15 +6,38 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-.App-Header {
-  text-align: left;
+.flex-container{
+  display: flex;
+  flex-direction: row;
 }
+.left-side{
+  display: flex;
+  background-color: orange;
+  padding: 329.5px 100px;
+  display: inline-block;
+  text-align: left;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.right-side{
+  display: flex;
+  background-color: wheat;
+  padding: 329.5px 570px;
+  text-align:justify;
+}
+.app-header{
+  text-align: left;
+  justify-content: left;
+  text-size-adjust: 15px;
+}
+.popup-btn{
+  background-color:snow;
+}
+
 /* Popup style */
 .popup-box {
   position: fixed;
@@ -73,8 +96,4 @@ code {
 .input-box {
   width: fit-content;
   height: 30px;
-}
-
-.divcls {
-  background-color: aqua;
 }

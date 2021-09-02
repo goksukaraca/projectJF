@@ -3,12 +3,12 @@ import Select from "react-select";
 
 const apiKey = `3d3e67d7703a9d49cccfc8e5686daa94`;
 
-const SelectFrom = () => {
+const SelectFrom = ({onChange}) => {
 
     const [data, setData] = useState([]);    
     const [selectedList, setSelectedList] = useState([]);
-    const [name, setName] = useState('');
-    
+    const [checkname, setCheckName] = useState('');
+
     useEffect(() => {
         fetch(`https://api.jotform.com/user/forms?apikey=${apiKey}&orderby=id`)
         .then(response => response.json()).then(veri => {
@@ -23,23 +23,23 @@ const SelectFrom = () => {
     })
 
     const handleChange = e => {
-        console.log(e); 
-        localStorage.setItem(`${name}`, JSON.stringify(e));
+        //[...localStorage.getItem("checklist") || [] ]
+        console.log(JSON.stringify(e)); 
+        localStorage.setItem("checklist", JSON.stringify(e));
         setSelectedList(e);
+        console.log(localStorage.getItem("checklist"))
     }
     
-    const handleSave = (event) => {
+    const handleSave = event => {
         event.preventDefault();
         console.log(selectedList); 
-        console.log(JSON.stringify(localStorage.key(`${name}`)));
-        let item = localStorage.getItem(`${name}`) !== null ? JSON.parse(localStorage.getItem(`${name}`)) : [];//nasıl localden value çekilir.
-        console.log(item);
-        item.map(element => console.log(element.label));
-        
+        let item = JSON.parse(localStorage.getItem("checklist")) ;//nasıl localden value çekilir.
+        console.log(item); 
+        onChange(checkname);       
     }
-        return(
+    return(
         <div>
-            <input placeholder="Name your Checklist" className="input-box" onChange={(e) => setName(e.target.value)}></input>
+            <input placeholder="Name your Checklist" className="input-box" onChange={(e) => onChange(setCheckName(e.target.value))}></input>
             <p></p>
             <Select isMulti="true" name="list-box" value={selectedList} onChange={handleChange} 
                 options={option}/>

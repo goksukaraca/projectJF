@@ -14,6 +14,9 @@ code {
   display: flex;
   flex-direction: row;
 }
+.formleft{
+  cursor: pointer;
+}
 .left-side{
   display: flex;
   background-color: orange;

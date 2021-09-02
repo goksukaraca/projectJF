@@ -11,7 +11,6 @@ function App() {
         <PopupButton />
       </div>
       <div className="right-side">
-        Your Checklist
       </div>
     </div>
   );

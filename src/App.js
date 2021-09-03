@@ -10,9 +10,7 @@ function App() {
         </header>
         <PopupButton />
       </div>
-      <div className="right-side">
-
-      </div>
+     <div className="right-side"></div>
     </div>
   );
 }

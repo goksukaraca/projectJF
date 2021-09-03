@@ -1,5 +1,5 @@
+import { render } from "@testing-library/react";
 import React, { useState } from "react";
-import FormItem from "./FormItem";
 import Popup from "./Popup";
 import SelectFrom from "./SelectForm";
 
@@ -16,6 +16,15 @@ const PopupButton = () => {
         console.log(checkname);
         setCheckName(checkname);
     }
+    const handleCheck = props => {
+        console.log(props);
+        render(
+            <div className="right-list">
+               <li key={props.value}><a target="_blank" href={`https://form.jotform.com/${props.value}`}>{props.label}</a></li> 
+            </div>
+        )
+        
+    }
     
     return (
     <div>
@@ -31,15 +40,13 @@ const PopupButton = () => {
         />}
         {
         <form>
-            <ul className="formleft" onClick={() => {
-                console.log(data);
+            <ul className="formleft" onClick={() =>
+            {   console.log(data);
                 data.map(item => {
                     console.log(item);
-                    return(
-                        <FormItem {...item} value={item.value} label={item.label} />
-                    );
-                })
-            }}>
+                    return handleCheck(item);
+                })}
+            }>
                 {checkname}
             </ul>
         </form>

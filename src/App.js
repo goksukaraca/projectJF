@@ -4,13 +4,12 @@ import PopupButton from "./components/PopupButton";
 function App() {
   return (
     <div className="flex-container">
-      <div className="left-side">
-        <header className="app-header"> Checklist App
-          <p></p>
-        </header>
+      
+        <header className="app-header"></header>
+        <div className="left-side">
+          <h2>Checklist App</h2>
         <PopupButton />
       </div>
-     <div className="right-side"></div>
     </div>
   );
 }

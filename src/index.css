@@ -1,18 +1,7 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
 .flex-container{
   display: flex;
-  flex-direction: row;
+  width: 100%;
+  flex-direction: column;
 }
 .formleft{
   cursor: pointer;
@@ -20,29 +9,33 @@ code {
 .left-side{
   display: flex;
   background-color: orange;
-  padding: 321.5px 100px;
-  display: inline-block;
-  text-align: center;
-  flex-wrap: wrap;
-  flex-direction: row;
+  height: 30%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-direction:column;
 }
 .right-side{
   display: flex;
   background-color: wheat;
-  padding: 321.5px 611px;
   text-align:center;
-  flex-direction: row;
+  height: 70%;
+  align-items: center;
+  
 }
-.rigth-list{
-  display: flex;
+.right-list{
+  width: 100%;
 }
 .app-header{
-  text-align: left;
-  justify-content: left;
+  top: 0px;
+  position:fixed;
+  text-align: center;
+  left: 50%;
   text-size-adjust: 15px;
 }
 .popup-btn{
   background-color:snow;
+
 }
 
 /* Popup style */

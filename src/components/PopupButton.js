@@ -19,7 +19,7 @@ const PopupButton = () => {
     const handleCheck = props => {
         console.log(props);
         render(
-            <div className="right-list">
+            <div className="right-side">
                <li key={props.value}><a target="_blank" href={`https://form.jotform.com/${props.value}`}>{props.label}</a></li> 
             </div>
         )
